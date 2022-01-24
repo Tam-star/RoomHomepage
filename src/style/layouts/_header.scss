@@ -1,0 +1,20 @@
+header {
+    display : flex;
+    align-items: center;
+    color : white;
+    position: absolute;
+    top : 70px;
+    & h1{
+        margin : 0 70px;
+    }
+    & ul {
+        margin :0;
+        padding : 0;
+        display: flex;
+        justify-content: space-around;
+        & li{
+            list-style-type: none;
+            margin-right : 50px;
+        }
+    }
+}

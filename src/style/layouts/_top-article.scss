@@ -1,0 +1,15 @@
+.top-article {
+    height: 65vh;
+    display: flex;
+    & section {
+        padding: 110px 120px;
+        & h2 {
+            font-weight: 600;
+            font-size: 40px;
+            letter-spacing: -1px;
+        }
+        & p {
+            @include paragraph-style();
+        }
+    }
+}

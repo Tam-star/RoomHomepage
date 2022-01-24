@@ -1,0 +1,15 @@
+.bottom-article {
+    height: 35vh;
+    display: flex;
+    & section {
+        padding : 80px 50px;
+        & h2 {
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 5px;
+        }
+        & p {
+            @include paragraph-style();
+        }
+    }
+}

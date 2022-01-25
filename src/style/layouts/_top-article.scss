@@ -2,14 +2,48 @@
     height: 65vh;
     display: flex;
     & section {
-        padding: 110px 120px;
-        & h2 {
-            font-weight: 600;
-            font-size: 40px;
-            letter-spacing: -1px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width : 100%;
+        & .top-article__text {
+            padding : 0;
+            max-width : 500px;
+            height : fit-content;
+            margin-top: 80px;
+            & h2 {
+                font-weight: 600;
+                font-size: 40px;
+                letter-spacing: -1px;
+                margin-top :0;
+                margin-bottom: 20px;
+            }
+            & p {
+                @include paragraph-style();
+            }
+            & .shop-now {
+                color: $black;
+                letter-spacing: 11px;
+                margin-top: 25px;
+                &__arrow {
+                    margin-left: 30px;
+                }
+            }
         }
-        & p {
-            @include paragraph-style();
-        }
+    }
+}
+
+.changeSlide {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    width: 170px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    & img {
+        cursor: pointer;
     }
 }

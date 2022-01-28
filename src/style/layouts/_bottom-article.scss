@@ -8,10 +8,13 @@
     & section {
         padding : 70px 50px;
         width : 40%;
+        @include tablet-only{
+            padding : 40px 50px;
+        }
         @include mobile-only{
             width : 80%;
             padding : 0;
-            margin : auto;
+            margin : 60px auto;
         }
         & h2 {
             font-weight: 700;

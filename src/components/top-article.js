@@ -10,17 +10,17 @@ export default function TopArticle({
   handleNextArticle,
   handlePreviousArticle,
 }) {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 575px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 895px)" });
 
   return (
     <article className="top-article">
       {/* If mobile/tablet width, the change-slide-container appear inside the image */}
-      {isTabletOrMobile ? (
+      {isMobile ? (
         <div className="mobile-top-article-img-container">
           <img
             className="top-article__image"
             src={
-              isTabletOrMobile
+              isMobile
                 ? listOfArticles[articleId].mobileImage
                 : listOfArticles[articleId].image
             }
@@ -38,20 +38,12 @@ export default function TopArticle({
         <img
           className="top-article__image"
           src={
-            isTabletOrMobile
+            isMobile
               ? listOfArticles[articleId].mobileImage
               : listOfArticles[articleId].image
           }
         />
       )}
-      {/* <img
-        className="top-article__image"
-        src={
-          isTabletOrMobile
-            ? listOfArticles[articleId].mobileImage
-            : listOfArticles[articleId].image
-        }
-      /> */}
       <div className="top-article__right-corner">
         <section>
           <div className="top-article__text">
@@ -64,7 +56,7 @@ export default function TopArticle({
           </div>
         </section>
         {/* If desktop width, the change-slide-container appear in the corner of the text section */}
-        {isTabletOrMobile ? (
+        {isMobile ? (
           ""
         ) : (
           <div className="change-slide-container">

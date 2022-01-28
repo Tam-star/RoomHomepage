@@ -12,7 +12,7 @@ function App() {
   const [selectedArticle, setSelectedArticle] = React.useState(0);
   const [openMobileMenu, setOpenMobileMenu] = React.useState(false);
 
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 575px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 895px)" });
 
   const handleMobileMenu = () => {
     setOpenMobileMenu(!openMobileMenu);
@@ -38,12 +38,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>room</h1>
-        {isTabletOrMobile && openMobileMenu ? (
+        {isMobile && openMobileMenu ? (
           <HeaderMenu mobile={true} handleCloseIcon={handleMobileMenu} />
         ) : (
           ""
         )}
-        {isTabletOrMobile ? (
+        {isMobile ? (
           <img className="menu-icon" src={menuIcon} onClick={handleMobileMenu}/>
         ) : (
           <HeaderMenu />

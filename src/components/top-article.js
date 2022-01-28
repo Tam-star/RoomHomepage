@@ -3,29 +3,80 @@ import listOfArticles from "../data";
 import angleLeft from "../assets/images/icon-angle-left.svg";
 import angleRight from "../assets/images/icon-angle-right.svg";
 import arrow from "../assets/images/icon-arrow.svg";
+import { useMediaQuery } from "react-responsive";
 
 export default function TopArticle({
   articleId,
   handleNextArticle,
   handlePreviousArticle,
 }) {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 575px)" });
+
   return (
     <article className="top-article">
-      <img src={listOfArticles[articleId].image}></img>
-      <section>
-        <div className="top-article__text">
-          <h2>{listOfArticles[articleId].title}</h2>
-          <p>{listOfArticles[articleId].text}</p>
-          <p className="shop-now">
-            <a>SHOP NOW</a>
-            <img className="shop-now__arrow" src={arrow}></img>
-          </p>
+      {/* If mobile/tablet width, the change-slide-container appear inside the image */}
+      {isTabletOrMobile ? (
+        <div className="mobile-top-article-img-container">
+          <img
+            className="top-article__image"
+            src={
+              isTabletOrMobile
+                ? listOfArticles[articleId].mobileImage
+                : listOfArticles[articleId].image
+            }
+          />
+          <div className="change-slide-container">
+            <div className="arrow-container" onClick={handlePreviousArticle}>
+              <img src={angleLeft}></img>
+            </div>
+            <div className="arrow-container" onClick={handleNextArticle}>
+              <img src={angleRight}></img>
+            </div>
+          </div>
         </div>
-        <div className="changeSlide">
-          <img src={angleLeft} onClick={handlePreviousArticle}></img>
-          <img src={angleRight} onClick={handleNextArticle}></img>
-        </div>
-      </section>
+      ) : (
+        <img
+          className="top-article__image"
+          src={
+            isTabletOrMobile
+              ? listOfArticles[articleId].mobileImage
+              : listOfArticles[articleId].image
+          }
+        />
+      )}
+      {/* <img
+        className="top-article__image"
+        src={
+          isTabletOrMobile
+            ? listOfArticles[articleId].mobileImage
+            : listOfArticles[articleId].image
+        }
+      /> */}
+      <div className="top-article__right-corner">
+        <section>
+          <div className="top-article__text">
+            <h2>{listOfArticles[articleId].title}</h2>
+            <p>{listOfArticles[articleId].text}</p>
+            <p className="shop-now">
+              <a>SHOP NOW</a>
+              <img className="shop-now__arrow" src={arrow}></img>
+            </p>
+          </div>
+        </section>
+        {/* If desktop width, the change-slide-container appear in the corner of the text section */}
+        {isTabletOrMobile ? (
+          ""
+        ) : (
+          <div className="change-slide-container">
+            <div className="arrow-container" onClick={handlePreviousArticle}>
+              <img src={angleLeft}></img>
+            </div>
+            <div className="arrow-container" onClick={handleNextArticle}>
+              <img src={angleRight}></img>
+            </div>
+          </div>
+        )}
+      </div>
     </article>
   );
 }

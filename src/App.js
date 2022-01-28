@@ -1,11 +1,22 @@
+import "normalize.css"
 import "./style/App.scss";
 import React from "react";
 import TopArticle from "./components/top-article";
 import bottomRightImage from "./assets/images/bottom-right-image.jpg";
 import bottomLeftImage from "./assets/images/bottom-left-image.jpg";
+import menuIcon from "./assets/images/icon-hamburger.svg";
+import { useMediaQuery } from "react-responsive";
+import HeaderMenu from "./components/header-menu";
 
 function App() {
   const [selectedArticle, setSelectedArticle] = React.useState(0);
+  const [openMobileMenu, setOpenMobileMenu] = React.useState(false);
+
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 575px)" });
+
+  const handleMobileMenu = () => {
+    setOpenMobileMenu(!openMobileMenu);
+  };
 
   const handleNextArticle = () => {
     if (selectedArticle === 2) {
@@ -27,14 +38,16 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>room</h1>
-        <nav>
-          <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="#">shop</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">contact</a></li>
-          </ul>
-        </nav>
+        {isTabletOrMobile && openMobileMenu ? (
+          <HeaderMenu mobile={true} handleCloseIcon={handleMobileMenu} />
+        ) : (
+          ""
+        )}
+        {isTabletOrMobile ? (
+          <img className="menu-icon" src={menuIcon} onClick={handleMobileMenu}/>
+        ) : (
+          <HeaderMenu />
+        )}
       </header>
       <main>
         <TopArticle
@@ -58,6 +71,7 @@ function App() {
           <img src={bottomRightImage}></img>
         </article>
       </main>
+      {openMobileMenu ? <div className="shadow"></div> : ''}
     </div>
   );
 }

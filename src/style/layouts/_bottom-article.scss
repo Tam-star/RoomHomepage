@@ -1,9 +1,18 @@
 .bottom-article {
     height: 35vh;
     display: flex;
+    @include mobile-only{
+        height : auto;
+        flex-direction: column;
+    }
     & section {
         padding : 70px 50px;
-        width: 500px;
+        width : 40%;
+        @include mobile-only{
+            width : 80%;
+            padding : 0;
+            margin : auto;
+        }
         & h2 {
             font-weight: 700;
             font-size: 13px;
@@ -11,6 +20,12 @@
         }
         & p {
             @include paragraph-style();
+        }
+    }
+    & img {
+        width : 30%;
+        @include mobile-only{
+            width : 100%;
         }
     }
 }

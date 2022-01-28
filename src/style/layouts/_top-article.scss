@@ -1,49 +1,88 @@
 .top-article {
     height: 65vh;
+    width: 100%;
     display: flex;
-    & section {
+    @include mobile-only {
+        height: auto;
+        flex-direction: column;
+    }
+    &__image {
+        width: 60%;
+        @include mobile-only {
+            width: 100%;
+        }
+    }
+    &__right-corner {
+        width: 40%;
         position: relative;
-        display: flex;
-        justify-content: center;
-        width : 100%;
-        & .top-article__text {
-            padding : 0;
-            max-width : 500px;
-            height : fit-content;
-            margin-top: 80px;
-            & h2 {
-                font-weight: 600;
-                font-size: 40px;
-                letter-spacing: -1px;
-                margin-top :0;
-                margin-bottom: 20px;
+        @include mobile-only {
+            width: 100%;
+        }
+        & section {
+            width: 410px;
+            margin: 110px 0 0 100px;
+            @include mobile-only {
+                margin: 0;
+                width: 100%;
             }
-            & p {
-                @include paragraph-style();
-            }
-            & .shop-now {
-                color: $black;
-                letter-spacing: 11px;
-                margin-top: 25px;
-                &__arrow {
-                    margin-left: 30px;
+            & .top-article__text {
+                padding: 0;
+                max-width: 500px;
+                height: fit-content;
+                margin-top: 80px;
+                & h2 {
+                    font-weight: 600;
+                    font-size: 40px;
+                    letter-spacing: -1px;
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                }
+                & p {
+                    @include paragraph-style();
+                }
+                & .shop-now {
+                    color: $black;
+                    letter-spacing: 11px;
+                    margin-top: 25px;
+                    cursor: pointer;
+                    &__arrow {
+                        margin-left: 30px;
+                    }
                 }
             }
         }
     }
 }
 
-.changeSlide {
+.change-slide-container {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: black;
+    background-color: rgb(241, 100, 100);
     width: 170px;
     height: 80px;
     display: flex;
+    @include mobile-only{
+        right : 0;
+        left : auto;
+    }
+}
+
+.arrow-container {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    display: flex;
     justify-content: space-around;
     align-items: center;
-    & img {
-        cursor: pointer;
+    &:hover {
+        background-color: $very-dark-grey;
     }
+}
+
+.mobile-top-article-img-container{
+    position: relative;
+    height : min-content;
+    line-height: 0;
 }

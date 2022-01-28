@@ -1,38 +1,90 @@
 header {
-    display : flex;
+    display: flex;
     align-items: center;
-    color : white;
+    color: white;
     position: absolute;
-    top : 60px;
-    & h1{
-        margin : 0 70px;
+    z-index: 2;
+    top: 60px;
+    @include mobile-only {
+        width: 100%;
+        top: 0;
     }
+    & h1 {
+        margin: 0 70px;
+        @include mobile-only {
+            margin: 50px 0 0 0;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+        }
+    }
+}
+
+.menu {
     & ul {
-        margin :0;
-        margin-top : 15px;
-        padding : 0;
+        margin: 15px 0 0 0;
+        padding: 0;
         display: flex;
         justify-content: space-around;
-        & li{
+        @include mobile-only {
+            width: 100%;
+        }
+        & li {
             list-style-type: none;
-            margin-right : 50px;
-            & a{
-                color : white;
+            margin-right: 50px;
+            & a {
+                color: white;
                 text-decoration: none;
             }
-            &::after{
-                content: '';
-                display : block;
-                width : 20px;
-                height : 2px;
-                margin : 5px auto;
+            &::after {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 2px;
+                margin: 5px auto;
                 background-color: $white;
                 opacity: 0;
             }
-            &:hover::after{
+            &:hover::after {
                 opacity: 100%;
             }
         }
-        
     }
+    &--mobile {
+        position: absolute;
+        margin: 0;
+        top: 0;
+        left: 0;
+        padding: 35px 0;
+        z-index: 3;
+        width: 100%;
+        background-color: $white;
+        & ul {
+            margin : 0;
+            justify-content: flex-end;
+            & li {
+                margin-right: 30px;
+                & a {
+                    font-weight: 700;
+                    color: $black;
+                }
+            }
+        }
+        &__close-icon{
+            vertical-align: center;
+            position : relative;
+            top : 15px;
+            left : 30px;
+            width : 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+.menu-icon {
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    cursor: pointer;
 }

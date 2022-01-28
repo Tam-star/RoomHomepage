@@ -1,8 +1,14 @@
 @mixin paragraph-style() {
     font-family: "Spartan", sans-serif;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 13px;
     color: $dark-grey;
     line-height: 180%;
     letter-spacing: -1px;
+}
+
+@mixin mobile-only{
+    @media(max-width: $breakpoint-mobile){
+        @content;
+    }
 }

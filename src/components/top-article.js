@@ -69,7 +69,7 @@ export default function TopArticle({
             </h2>
             <p data-testid="article-text">{listOfArticles[articleId].text}</p>
             <p tabIndex="0" role="link" className="shop-now">
-              <a>SHOP NOW</a>
+              SHOP NOW
               <img alt="arrow" className="shop-now__arrow" src={arrow}></img>
             </p>
           </div>

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/RoomHomepage/static/css/main.b584e6c0.css",
-    "main.js": "/RoomHomepage/static/js/main.ff445511.js",
+    "main.js": "/RoomHomepage/static/js/main.9f57da6c.js",
     "static/media/desktop-image-hero-1.jpg": "/RoomHomepage/static/media/desktop-image-hero-1.91901d0d47ea68db9434.jpg",
     "static/media/desktop-image-hero-3.jpg": "/RoomHomepage/static/media/desktop-image-hero-3.05fd679aa0d31e01c176.jpg",
     "static/media/desktop-image-hero-2.jpg": "/RoomHomepage/static/media/desktop-image-hero-2.9d35405672f4fca67945.jpg",
@@ -16,10 +16,10 @@
     "static/media/icon-angle-left.svg": "/RoomHomepage/static/media/icon-angle-left.d53877dfd9c6774a68749ad0239b4ce1.svg",
     "static/media/icon-angle-right.svg": "/RoomHomepage/static/media/icon-angle-right.0ed3f81fbd14b3bd61d875b7df144e4c.svg",
     "main.b584e6c0.css.map": "/RoomHomepage/static/css/main.b584e6c0.css.map",
-    "main.ff445511.js.map": "/RoomHomepage/static/js/main.ff445511.js.map"
+    "main.9f57da6c.js.map": "/RoomHomepage/static/js/main.9f57da6c.js.map"
   },
   "entrypoints": [
     "static/css/main.b584e6c0.css",
-    "static/js/main.ff445511.js"
+    "static/js/main.9f57da6c.js"
   ]
 }

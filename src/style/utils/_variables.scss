@@ -6,7 +6,6 @@ $white : hsl(0, 0%, 100%);
 $very-dark-grey : hsl(0, 0%, 27%);
 
 //BREAKPOINTS
-//$breakpoint-mobile: 375px;
-$breakpoint-mobile: 895px;
-$breakpoint-tablet : 1275px;
-$breakpoint-desktop : 1440px;
+$breakpoint-small-screen: 895px;
+$breakpoint-medium-screen : 1275px;
+$breakpoint-large-screen : 1440px;

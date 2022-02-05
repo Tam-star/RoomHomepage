@@ -7,14 +7,14 @@
     letter-spacing: -1px;
 }
 
-@mixin mobile-only{
-    @media(max-width: $breakpoint-mobile){
+@mixin small-screen-only{
+    @media(max-width: $breakpoint-small-screen){
         @content;
     }
 }
 
-@mixin tablet-only{
-    @media(max-width: $breakpoint-tablet){
+@mixin medium-screen-only{
+    @media(max-width: $breakpoint-medium-screen){
         @content;
     }
 }

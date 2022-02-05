@@ -5,11 +5,11 @@ header {
     position: absolute;
     z-index: 2;
     top: 60px;
-    @include tablet-only {
+    @include medium-screen-only {
         flex-direction: column;
         width : 50%;
     }
-    @include mobile-only {
+    @include small-screen-only {
         width: 100%;
         top: 0;
     }
@@ -17,7 +17,7 @@ header {
         margin: 0 70px;
         font-weight: 600;
         letter-spacing: -1px;
-        @include mobile-only {
+        @include small-screen-only {
             margin: 50px 0 0 0;
             padding: 0;
             width: 100%;
@@ -28,15 +28,12 @@ header {
 }
 
 .menu {
-    @include tablet-only{
-
-    }
     & ul {
         margin: 15px 0 0 0;
         padding: 0;
         display: flex;
         justify-content: space-around;
-        @include mobile-only {
+        @include small-screen-only {
             width: 100%;
         }
         & li {

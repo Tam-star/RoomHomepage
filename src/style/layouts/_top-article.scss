@@ -2,26 +2,26 @@
     height: 65vh;
     width: 100%;
     display: flex;
-    @include mobile-only {
+    @include small-screen-only {
         height: auto;
         flex-direction: column;
     }
     &__image {
         width: 60%;
-        @include tablet-only{
+        @include medium-screen-only{
             width : 50%;
         }
-        @include mobile-only {
+        @include small-screen-only {
             width: 100%;
         }
     }
     &__right-corner {
         width: 40%;
         position: relative;
-        @include tablet-only{
+        @include medium-screen-only{
             width : 50%;
         }
-        @include mobile-only {
+        @include small-screen-only {
             width: 100%;
             padding: 0;
         }
@@ -29,7 +29,7 @@
             width: 410px;
             //margin: 110px 0 0 100px;
             margin : 110px auto 0 auto;
-            @include mobile-only {
+            @include small-screen-only {
                 margin: 60px auto;
                 width: 80%;
                 height: 100%;
@@ -39,7 +39,7 @@
                 max-width: 500px;
                 height: fit-content;
                 margin-top: 80px;
-                @include mobile-only {
+                @include small-screen-only {
                     margin: auto;
                     max-width: none;
                 }
@@ -50,7 +50,7 @@
                     letter-spacing: -1px;
                     margin-top: 0;
                     margin-bottom: 20px;
-                    @include mobile-only{
+                    @include small-screen-only{
                         font-size : 30px;
                     }
                 }
@@ -65,7 +65,7 @@
                     &__arrow {
                         margin-left: 30px;
                     }
-                    @include mobile-only {
+                    @include small-screen-only {
                         margin-top: 50px;
                     }
                 }
@@ -81,7 +81,7 @@
     width: 170px;
     height: 80px;
     display: flex;
-    @include mobile-only {
+    @include small-screen-only {
         width : 110px;
         height : 60px;
         right: 0;
@@ -101,7 +101,7 @@
         background-color: $very-dark-grey;
     }
     & img{
-        @include mobile-only{
+        @include small-screen-only{
             height : 16px;
         }
     }

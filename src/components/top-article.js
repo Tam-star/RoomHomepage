@@ -3,68 +3,110 @@ import listOfArticles from "../data";
 import angleLeft from "../assets/images/icon-angle-left.svg";
 import angleRight from "../assets/images/icon-angle-right.svg";
 import arrow from "../assets/images/icon-arrow.svg";
-import { useMediaQuery } from "react-responsive";
 
 export default function TopArticle({
+  mobile = false,
   articleId,
   handleNextArticle,
   handlePreviousArticle,
 }) {
-  const isMobile = useMediaQuery({ query: "(max-width: 895px)" });
-
   return (
     <article className="top-article">
       {/* If mobile/tablet width, the change-slide-container appear inside the image */}
-      {isMobile ? (
+      {mobile ? (
         <div className="mobile-top-article-img-container">
           <img
+            alt=""
             className="top-article__image"
-            src={
-              isMobile
-                ? listOfArticles[articleId].mobileImage
-                : listOfArticles[articleId].image
-            }
+            data-testid="changing-image"
+            src={listOfArticles[articleId].mobileImage}
           />
-          <div className="change-slide-container">
-            <div className="arrow-container" onClick={handlePreviousArticle}>
-              <img src={angleLeft}></img>
+          <div
+            className="change-slide-container"
+            data-testid="change-slide-container-mobile"
+          >
+            <div
+              data-testid="left-arrow"
+              tabIndex="0"
+              role="button"
+              aria-label="change slide"
+              className="arrow-container"
+              onClick={handlePreviousArticle}
+              onKeyUp={(event) => {
+                if (event.code === "Enter") handlePreviousArticle();
+              }}
+            >
+              <img alt="left arrow" src={angleLeft}></img>
             </div>
-            <div className="arrow-container" onClick={handleNextArticle}>
-              <img src={angleRight}></img>
+            <div
+              data-testid="right-arrow"
+              tabIndex="0"
+              role="button"
+              aria-label="change slide"
+              className="arrow-container"
+              onClick={handleNextArticle}
+              onKeyUp={(event) => {
+                if (event.code === "Enter") handleNextArticle();
+              }}
+            >
+              <img alt="right arrow" src={angleRight}></img>
             </div>
           </div>
         </div>
       ) : (
         <img
+          data-testid="changing-image"
+          alt=""
           className="top-article__image"
-          src={
-            isMobile
-              ? listOfArticles[articleId].mobileImage
-              : listOfArticles[articleId].image
-          }
+          src={listOfArticles[articleId].image}
         />
       )}
       <div className="top-article__right-corner">
         <section>
           <div className="top-article__text">
-            <h2>{listOfArticles[articleId].title}</h2>
-            <p>{listOfArticles[articleId].text}</p>
-            <p className="shop-now">
+            <h2 data-testid="article-title">
+              {listOfArticles[articleId].title}
+            </h2>
+            <p data-testid="article-text">{listOfArticles[articleId].text}</p>
+            <p tabIndex="0" role="link" className="shop-now">
               <a>SHOP NOW</a>
-              <img className="shop-now__arrow" src={arrow}></img>
+              <img alt="arrow" className="shop-now__arrow" src={arrow}></img>
             </p>
           </div>
         </section>
         {/* If desktop width, the change-slide-container appear in the corner of the text section */}
-        {isMobile ? (
+        {mobile ? (
           ""
         ) : (
-          <div className="change-slide-container">
-            <div className="arrow-container" onClick={handlePreviousArticle}>
-              <img src={angleLeft}></img>
+          <div
+            className="change-slide-container"
+            data-testid="change-slide-container-desktop"
+          >
+            <div
+              data-testid="left-arrow"
+              tabIndex="0"
+              role="button"
+              aria-label="change slide"
+              className="arrow-container"
+              onClick={handlePreviousArticle}
+              onKeyUp={(event) => {
+                if (event.code === "Enter") handlePreviousArticle();
+              }}
+            >
+              <img alt="left arrow" src={angleLeft}></img>
             </div>
-            <div className="arrow-container" onClick={handleNextArticle}>
-              <img src={angleRight}></img>
+            <div
+              data-testid="right-arrow"
+              tabIndex="0"
+              role="button"
+              aria-label="change slide"
+              className="arrow-container"
+              onClick={handleNextArticle}
+              onKeyUp={(event) => {
+                if (event.code === "Enter") handleNextArticle();
+              }}
+            >
+              <img alt="right arrow" src={angleRight}></img>
             </div>
           </div>
         )}

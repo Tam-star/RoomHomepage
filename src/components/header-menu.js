@@ -4,7 +4,18 @@ import closeIcon from "../assets/images/icon-close.svg";
 export default function HeaderMenu({ mobile = false, handleCloseIcon }) {
   return (
     <nav className={`menu ${mobile ? "menu--mobile" : ""}`}>
-      {mobile ? <img className='menu--mobile__close-icon' src={closeIcon} onClick={handleCloseIcon}/> : ""}
+      {mobile ? (
+        <img
+          className="menu--mobile__close-icon"
+          tabIndex="0"
+          role="button"
+          aria-label="close menu"
+          src={closeIcon}
+          onClick={handleCloseIcon}
+        />
+      ) : (
+        ""
+      )}
       <ul>
         <li>
           <a href="#">home</a>

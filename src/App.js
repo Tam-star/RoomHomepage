@@ -1,4 +1,4 @@
-import "normalize.css"
+import "normalize.css";
 import "./style/App.scss";
 import React from "react";
 import TopArticle from "./components/top-article";
@@ -44,19 +44,26 @@ function App() {
           ""
         )}
         {isMobile ? (
-          <img className="menu-icon" src={menuIcon} onClick={handleMobileMenu}/>
+          <img
+            className="menu-icon"
+            role="button"
+            aria-label="show menu icon"
+            src={menuIcon}
+            onClick={handleMobileMenu}
+          />
         ) : (
           <HeaderMenu />
         )}
       </header>
       <main>
         <TopArticle
+          mobile={isMobile}
           articleId={selectedArticle}
           handleNextArticle={handleNextArticle}
           handlePreviousArticle={handlePreviousArticle}
         />
         <article className="bottom-article">
-          <img src={bottomLeftImage}></img>
+          <img alt="decorative" src={bottomLeftImage}></img>
           <section>
             <h2>ABOUT OUR FURNITURE</h2>
             <p>
@@ -68,12 +75,13 @@ function App() {
               to help you create your dream space.
             </p>
           </section>
-          <img src={bottomRightImage}></img>
+          <img alt="decorative" src={bottomRightImage}></img>
         </article>
       </main>
-      {openMobileMenu ? <div className="shadow"></div> : ''}
+      {openMobileMenu ? <div className="shadow"></div> : ""}
     </div>
   );
 }
 
 export default App;
+//export {handleNextArticle, handlePreviousArticle}

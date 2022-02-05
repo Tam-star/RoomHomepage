@@ -1,17 +1,17 @@
 .bottom-article {
     height: 35vh;
     display: flex;
-    @include mobile-only{
+    @include small-screen-only{
         height : auto;
         flex-direction: column;
     }
     & section {
         padding : 70px 50px;
         width : 40%;
-        @include tablet-only{
+        @include medium-screen-only{
             padding : 40px 50px;
         }
-        @include mobile-only{
+        @include small-screen-only{
             width : 80%;
             padding : 0;
             margin : 60px auto;
@@ -27,7 +27,7 @@
     }
     & img {
         width : 30%;
-        @include mobile-only{
+        @include small-screen-only{
             width : 100%;
         }
     }
